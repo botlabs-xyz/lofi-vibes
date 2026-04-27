@@ -1,0 +1,20 @@
+theme: jekyll-theme-midnight
+
+title: "VoiceMaestro"
+description: "Dynamic voice channels for Discord — simple for members, powerful for admins."
+
+show_downloads: false
+
+# Brand color (keep bot theme)
+theme_color: "#915DDF"
+
+# Branding / footer
+footer_brand: "Afterparty Bot Labs"
+footer_link: "https://afterpartylabs.xyz"
+
+# Logo (this is your actual file location)
+logo: "/assets/css/img/favicon.ico"
+
+# Header buttons
+cta_invite_url: "https://discord.com/oauth2/authorize?client_id=1165878496879452170&permissions=8&scope=bot%20applications.commands"
+cta_support_url: "https://discord.gg/BusuZp2G8w"
