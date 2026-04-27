@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="{{ site.theme_color | default: '#4E8ED8' }}" />
+    <title>{{ page.title | default: site.title | default: site.github.repository_name }}</title>
+    {% assign brand_image = site.icon | default: site.logo %}
+    {% assign favicon_image = site.favicon | default: brand_image %}
+    {% if favicon_image %}
+      <link rel="icon" href="{{ favicon_image | relative_url }}" type="image/x-icon" />
+      <link rel="shortcut icon" href="{{ favicon_image | relative_url }}" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="{{ favicon_image | relative_url }}" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" />
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to content</a>
 
+    <header class="page-header" role="banner">
+      <div class="wrap">
+        <div class="brand">
+          {% if brand_image %}
+            <img src="{{ brand_image | relative_url }}" alt="{{ site.title | default: site.github.repository_name }} logo" />
+          {% endif %}
+
+          <div class="brand-copy">
+            <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+
+            <div class="cta">
+              <a href="{{ '/' | relative_url }}" class="btn secondary">Home</a>
+
+              <div class="bot-switcher">
+                <button type="button" class="btn secondary bot-switcher-btn">Our Bots ▼</button>
+                <div class="bot-menu">
+                  <a href="https://afteryparty.github.io/afterparty-groovy-music/">Afterparty Groovy Music</a>
+                  <a href="https://afteryparty.github.io/guardian-link-docs/">Guardian Link</a>
+                  <a href="https://help.botversa.xyz">Versa</a>
+                  <a href="https://afteryparty.github.io/voice-maestro-docs/">VoiceMaestro</a>
+                  <a href="https://afteryparty.github.io/lofi-vibes/">Lofi Vibes</a>
+                  <a href="https://afteryparty.github.io/Verify-Bot-docs/">VerifyBot</a>
+                  <a href="https://afteryparty.github.io/kitsubot-docs/">KitsuBot</a>
+                </div>
+              </div>
+
+              {% if site.cta_invite_url %}
+                <a href="{{ site.cta_invite_url }}" class="btn primary">Invite</a>
+              {% endif %}
+              {% if site.cta_support_url %}
+                <a href="{{ site.cta_support_url }}" class="btn secondary">Support</a>
+              {% endif %}
+              {% if site.cta_website_url %}
+                <a href="{{ site.cta_website_url }}" class="btn secondary">Website</a>
+              {% endif %}
+              {% if site.cta_github_url %}
+                <a href="{{ site.cta_github_url }}" class="btn secondary">GitHub</a>
+              {% endif %}
+            </div>
+
+            <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-row">
+        <div class="badge">Powered by <strong>{{ site.footer_brand | default: "Afterparty Bot Labs" }}</strong></div>
+        <div class="muted">
+          © {{ site.time | date: "%Y" }} {{ site.footer_brand | default: "Afterparty Bot Labs" }}
+          - <a href="{{ site.footer_link | default: "https://afterpartylabs.xyz" }}">Website</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
