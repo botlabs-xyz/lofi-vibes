@@ -30,6 +30,7 @@ Lofi Vibes streams always-on lo-fi radio into Discord voice channels for study s
 
 <div class="cta">
   <a class="btn primary" href="{{ site.cta_invite_url }}" target="_blank" rel="noopener noreferrer">Invite Lofi Vibes</a>
+  <a class="btn secondary" href="{{ site.topgg_url }}" target="_blank" rel="noopener noreferrer">Vote on Top.gg</a>
   <a class="btn secondary" href="{{ site.cta_support_url }}" target="_blank" rel="noopener noreferrer">Support Server</a>
   <a class="btn secondary" href="{{ site.cta_website_url }}" target="_blank" rel="noopener noreferrer">Afterparty Bot Labs</a>
 </div>
