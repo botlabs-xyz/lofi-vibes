@@ -48,4 +48,8 @@ Supporter benefits:
 
 ## License
 
-Lofi Vibes is licensed under the Apache License 2.0. See [LICENSE](../LICENSE) for details.
+Lofi Vibes is licensed under the Apache License 2.0.
+
+See the [LICENSE](LICENSE) file for details.
+
+The "Lofi Vibes" name, logos, branding, and artwork are not covered by the Apache 2.0 license and may not be used to imply an official affiliation without permission.
