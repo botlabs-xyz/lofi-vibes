@@ -29,7 +29,7 @@ Yes. Use `/submit-station`. Suggestions go to a private bot-team review channel 
 
 ### Where do I verify live command names?
 
-Use `/help` in your server for the command set currently registered by your deployment.
+Use `/help` in your server for the command set currently available there.
 
 ### Where can I get help?
 

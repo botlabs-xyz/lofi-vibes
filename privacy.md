@@ -28,7 +28,7 @@ Lofi Vibes processes only the Discord metadata needed to provide radio playback,
 
 ### Sharing
 
-Data is not sold. Processing may involve required infrastructure providers used to run the service.
+Data is not sold. Processing may involve required infrastructure used to run the service.
 
 ### Contact
 

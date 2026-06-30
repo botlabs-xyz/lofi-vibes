@@ -9,94 +9,59 @@ permalink: /setup/
 
 ### 1. Invite Lofi Vibes
 
-Use the configured bot invite link from your deployment:
+Use the official invite link:
 
 [Invite Lofi Vibes]({{ site.cta_invite_url }})
 
 ### 2. Confirm Discord Permissions
 
-Open **Server Settings -> Roles -> Lofi Vibes** and confirm the bot can view channels, send messages, use embeds, connect to voice, and speak.
+Open **Server Settings -> Roles -> Lofi Vibes** and confirm the bot has the permissions needed for text and voice channels.
+
+Recommended permissions:
+
+- View Channels
+- Send Messages
+- Embed Links
+- Read Message History
+- Use Slash Commands
+- Connect
+- Speak
+
+If a specific voice channel has permission overrides, check that Lofi Vibes can view, connect, and speak there too.
 
 ### 3. Join A Voice Channel
 
-Join the voice channel where the station should play.
+Join the voice channel where you want Lofi Vibes to play.
 
-### 4. Pick A Station
+### 4. Run `/station`
 
-Run `/station`, choose a preset station from the dropdown, and Lofi Vibes will start or switch playback in your voice channel.
+Run `/station`, choose a preset station from the dropdown, and Lofi Vibes will start playing in your voice channel.
 
-### 5. Keep Playback Running
+Selecting a different station from the dropdown should switch playback without needing to disconnect the bot.
 
-Run `/24-7 mode:enable` if this server should recover radio playback and reconnect where possible.
+### 5. Enable `/24-7` If Wanted
 
-## Local Setup
+Run `/24-7 mode:enable` if you want Lofi Vibes to stay connected and recover the active or saved station when possible.
 
-```bash
-npm install
-npm.cmd ls --depth=0
-node --check src/index.js
-```
+Run `/24-7 mode:disable` if you no longer want continuous recovery for the server.
 
-Do not commit `.env`. Keep tokens, database URLs, and Lavalink credentials local to the deployment environment.
+### 6. Optional `/server-profile` Setup
 
-## Environment Example
+Server owners and members with Manage Server can use `/server-profile` to configure server-level defaults.
 
-Use placeholders like these in your local `.env` or hosting provider. Replace every value that ends in `_HERE`.
+Useful options:
 
-```env
-DISCORD_TOKEN=BOT_TOKEN_HERE
-PREFIX=!
-CUSTOM_STATUS=lofi vibes & chill
+- `/server-profile color` sets or clears the server accent color.
+- `/server-profile default-station` sets or clears the default preset station.
+- `/server-profile volume` sets the default volume.
+- `/server-profile dj-role` sets or clears the DJ role.
+- `/server-profile show` shows the current server settings.
+- `/server-profile reset` resets the server settings.
 
-DB_BACKEND=mongo
-MONGODB_URI=MONGODB_CONNECTION_STRING_HERE
-MONGODB_DB=lofibot
-PORT=3000
-DEFAULT_TIMEZONE=America/New_York
+These settings affect this server only. They do not change the global bot profile.
 
-THEME_COLOR=#5865f2
-COLOR=#5865f2
-LOG_CHANNEL_ID=LOG_CHANNEL_ID_HERE
+### 7. Submit Station Requests
 
-BOT_INVITE_LINK=BOT_INVITE_LINK_HERE
-SUPPORT_SERVER_INVITE=SUPPORT_SERVER_INVITE_HERE
-TOPGG_VOTE_INVITE_LINK=TOPGG_VOTE_LINK_HERE
-SUPPORTER_STORE_LINK=SUPPORTER_STORE_LINK_HERE
+Use `/submit-station` if you want to suggest a station for review.
 
-NODE_NAME=Lofi Vibes
-NODE_URL=LAVALINK_HOST_AND_PORT_HERE
-NODE_AUTH=LAVALINK_PASSWORD_HERE
-NODE_SECURE=false
-
-RADIO_BROWSER_API_URL=https://all.api.radio-browser.info
-RADIO_BROWSER_TIMEOUT_MS=10000
-
-SPOTIFY_ID=SPOTIFY_CLIENT_ID_HERE
-SPOTIFY_SECRET=SPOTIFY_CLIENT_SECRET_HERE
-```
-
-### Link Env Compatibility
-
-Lofi Vibes preserves older env names where possible:
-
-- `TOKEN` or `DISCORD_TOKEN`
-- `INVITE` or `BOT_INVITE_LINK`
-- `SUPPORT` or `SUPPORT_SERVER_INVITE`
-- `VOTE` or `TOPGG_VOTE_INVITE_LINK`
-- `SUPPORTER_STORE_LINK`, `SUPPORTER_STORE`, or `STORE`
-- `SPOTIFYID` or `SPOTIFY_ID`
-- `SPOTIFYSECRET` or `SPOTIFY_SECRET`
-- `MONGODB_URI` or `MONGO_URI`
-- `COLOR` or `THEME_COLOR`
-
-## Optional Supporter Recognition
-
-Supporter membership is optional recognition only. Configure supporter recognition privately in your deployment environment if you want supporter-aware badges/status messages to appear.
-
-## Manual Test Checklist
-
-- `/station` opens the station dropdown and switches stations without disconnecting the bot.
-- `/24-7 mode:enable` saves the setting and recovers playback where possible.
-- `/profile` renders a readable profile card.
-- `/server-profile show` displays server defaults for users with Manage Server.
-- `/submit-station` confirms the station request was sent for team review.
+Station suggestions are reviewed by the Lofi Vibes team before they are accepted.

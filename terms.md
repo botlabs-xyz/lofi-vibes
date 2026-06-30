@@ -18,7 +18,7 @@ By using Lofi Vibes, you agree to responsible usage and compliance with Discord 
 ### Service Scope
 
 - Features may change over time.
-- Availability depends on Discord, hosting, Lavalink, and upstream station availability.
+- Availability depends on Discord, hosting, and upstream station availability.
 - Supporter membership is optional recognition and does not change normal bot feature access.
 
 ### Access Controls
