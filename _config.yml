@@ -1,0 +1,15 @@
+﻿title: "Lofi Vibes"
+description: "Relaxing lo-fi radio streams for Discord study rooms, chill hangouts, and background listening."
+show_downloads: false
+theme_color: "#5865F2"
+footer_brand: "Afterparty Bot Labs"
+footer_link: "https://afterpartylabs.xyz"
+icon: "/assets/css/img/favicon.ico"
+favicon: "/assets/css/img/favicon.ico"
+cta_invite_url: "https://discord.com/oauth2/authorize?client_id=1194219710351429683&permissions=36816961&integration_type=0&scope=bot%20applications.commands"
+cta_support_url: "https://discord.gg/BusuZp2G8w"
+cta_website_url: "https://afterpartylabs.xyz"
+topgg_url: "https://top.gg/bot/1194219710351429683/vote"
+url: "https://botlabs-xyz.github.io"
+baseurl: "/lofi-vibes"
+markdown: kramdown
