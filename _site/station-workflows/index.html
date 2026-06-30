@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#5865F2" />
+    <title>Station Workflows | Lofi Vibes</title>
+    <meta name="description" content="Preset station, upload-channel, and station submission workflows for Lofi Vibes." />
+    
+    
+    
+      <link rel="icon" href="/lofi-vibes/assets/css/img/favicon.ico" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="/lofi-vibes/assets/css/img/favicon.ico" />
+    
+    <link rel="stylesheet" href="/lofi-vibes/assets/css/style.css" />
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <div class="wrap">
+        <div class="brand">
+          
+            <img src="/lofi-vibes/assets/css/img/favicon.ico" alt="Lofi Vibes logo" />
+          
+          <div class="brand-copy">
+            <h1 class="project-name">Lofi Vibes</h1>
+            <p class="project-tagline">Free-first live radio for Discord study rooms, chill hangouts, and background listening.</p>
+            <nav class="site-nav" aria-label="Primary">
+              <a href="/lofi-vibes/">Home</a>
+              <a href="/lofi-vibes/commands/">Commands</a>
+              <a href="/lofi-vibes/setup/">Setup</a>
+              <a href="/lofi-vibes/station-workflows/">Station Workflows</a>
+              <a href="/lofi-vibes/permissions/">Permissions</a>
+              <a href="/lofi-vibes/troubleshooting/">Troubleshooting</a>
+              <a href="/lofi-vibes/faq/">FAQ</a>
+              <a href="/lofi-vibes/privacy/">Privacy</a>
+              <a href="/lofi-vibes/terms/">Terms</a>
+            </nav>
+            <div class="cta">
+              <a href="https://discord.com/oauth2/authorize?client_id=1194219710351429683&permissions=36816961&integration_type=0&scope=bot%20applications.commands" class="btn primary" target="_blank" rel="noopener noreferrer">Invite</a>
+              
+                <a href="https://top.gg/bot/1194219710351429683/vote" class="btn secondary" target="_blank" rel="noopener noreferrer">Vote</a>
+              
+              <a href="https://discord.gg/BusuZp2G8w" class="btn secondary" target="_blank" rel="noopener noreferrer">Support</a>
+              
+                <a href="" class="btn secondary" target="_blank" rel="noopener noreferrer">Supporter Store</a>
+              
+              <a href="https://afterpartylabs.xyz" class="btn secondary" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="station-sources">Station Sources</h2>
+
+<p>Lofi Vibes uses <code class="language-plaintext highlighter-rouge">src/data/preset-stations.json</code> for the preset station menu shown by <code class="language-plaintext highlighter-rouge">/station</code>. The public station menu reads from that existing preset source; developers can validate and reload it without restarting the bot.</p>
+
+<h2 id="public-station-requests">Public Station Requests</h2>
+
+<p>Normal users can run <code class="language-plaintext highlighter-rouge">/submit-station</code> with:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">name</code> required</li>
+  <li><code class="language-plaintext highlighter-rouge">url</code> required</li>
+  <li><code class="language-plaintext highlighter-rouge">country</code> optional</li>
+  <li><code class="language-plaintext highlighter-rouge">language</code> optional</li>
+  <li><code class="language-plaintext highlighter-rouge">tags</code> optional</li>
+  <li><code class="language-plaintext highlighter-rouge">homepage</code> optional</li>
+  <li><code class="language-plaintext highlighter-rouge">bitrate</code> optional</li>
+  <li><code class="language-plaintext highlighter-rouge">codec</code> optional</li>
+</ul>
+
+<p>The bot validates basic fields, applies a per-user cooldown, stores a pending submission record, and posts a review embed to <code class="language-plaintext highlighter-rouge">STATION_REVIEW_CHANNEL_ID</code>.</p>
+
+<p>Station requests are not sent to Radio Browser until a bot owner/developer approves them from the review channel.</p>
+
+<h2 id="review-channel">Review Channel</h2>
+
+<p>Set:</p>
+
+<pre><code class="language-env">STATION_REVIEW_CHANNEL_ID=PRIVATE_STATION_REVIEW_CHANNEL_ID_HERE
+SUPPORT_GUILD_ID=SUPPORT_SERVER_ID_HERE
+</code></pre>
+
+<p>The review channel must be in the configured support server. Approve and Reject buttons are limited to configured bot owners/developers or their trusted roles.</p>
+
+<h2 id="preset-upload-channel">Preset Upload Channel</h2>
+
+<p>Set:</p>
+
+<pre><code class="language-env">STATION_UPDATE_CHANNEL_ID=PRIVATE_PRESET_UPLOAD_CHANNEL_ID_HERE
+SUPPORT_GUILD_ID=SUPPORT_SERVER_ID_HERE
+</code></pre>
+
+<p>When a bot owner/developer uploads an attachment named <code class="language-plaintext highlighter-rouge">preset-stations.json</code> in that channel, Lofi Vibes:</p>
+
+<ul>
+  <li>downloads the attachment</li>
+  <li>parses and validates the JSON</li>
+  <li>rejects invalid JSON without overwriting the current file</li>
+  <li>backs up the current preset file to <code class="language-plaintext highlighter-rouge">src/data/backups/</code></li>
+  <li>writes the new preset file only after validation passes</li>
+  <li>reloads the in-memory station cache</li>
+  <li>replies with a success or error summary</li>
+</ul>
+
+<h2 id="developer-slash-commands">Developer Slash Commands</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/stations validate</code></td>
+      <td>Loads and validates <code class="language-plaintext highlighter-rouge">src/data/preset-stations.json</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/stations reload</code></td>
+      <td>Re-reads the preset JSON and replaces the in-memory station cache if valid.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/stations list</code></td>
+      <td>Shows the currently loaded preset stations with pagination.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These commands are developer-only and only work in the configured support server.</p>
+
+<h2 id="developer-access-env">Developer Access Env</h2>
+
+<p>Use one or more of these:</p>
+
+<pre><code class="language-env">OWNER_ID=DISCORD_USER_ID_HERE
+BOT_OWNER_IDS=DISCORD_USER_ID_HERE,SECOND_ID_HERE
+BOT_DEVELOPER_IDS=DISCORD_USER_ID_HERE,SECOND_ID_HERE
+BOT_OWNER_ROLE_ID=OWNER_ROLE_ID_HERE
+BOT_DEVELOPER_ROLE_ID=DEVELOPER_ROLE_ID_HERE
+</code></pre>
+
+<h2 id="preset-json-notes">Preset JSON Notes</h2>
+
+<p>Keep station records complete and stable. Required validation checks include duplicate station names/IDs, missing fields, invalid URLs, and malformed JSON.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">/stations validate</code> before relying on a new monthly station refresh.</p>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-row">
+        <div class="badge powered-by"><span>Powered by</span><strong>Afterparty Bot Labs</strong></div>
+        <div class="muted">© 2026 Afterparty Bot Labs · <a href="https://afterpartylabs.xyz" target="_blank" rel="noopener noreferrer">Website</a></div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#5865F2" />
+    <title>Setup | Lofi Vibes</title>
+    <meta name="description" content="First-time setup for Lofi Vibes in Discord." />
+    
+    
+    
+      <link rel="icon" href="/lofi-vibes/assets/css/img/favicon.ico" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="/lofi-vibes/assets/css/img/favicon.ico" />
+    
+    <link rel="stylesheet" href="/lofi-vibes/assets/css/style.css" />
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <div class="wrap">
+        <div class="brand">
+          
+            <img src="/lofi-vibes/assets/css/img/favicon.ico" alt="Lofi Vibes logo" />
+          
+          <div class="brand-copy">
+            <h1 class="project-name">Lofi Vibes</h1>
+            <p class="project-tagline">Free-first live radio for Discord study rooms, chill hangouts, and background listening.</p>
+            <nav class="site-nav" aria-label="Primary">
+              <a href="/lofi-vibes/">Home</a>
+              <a href="/lofi-vibes/commands/">Commands</a>
+              <a href="/lofi-vibes/setup/">Setup</a>
+              <a href="/lofi-vibes/station-workflows/">Station Workflows</a>
+              <a href="/lofi-vibes/permissions/">Permissions</a>
+              <a href="/lofi-vibes/troubleshooting/">Troubleshooting</a>
+              <a href="/lofi-vibes/faq/">FAQ</a>
+              <a href="/lofi-vibes/privacy/">Privacy</a>
+              <a href="/lofi-vibes/terms/">Terms</a>
+            </nav>
+            <div class="cta">
+              <a href="https://discord.com/oauth2/authorize?client_id=1194219710351429683&permissions=36816961&integration_type=0&scope=bot%20applications.commands" class="btn primary" target="_blank" rel="noopener noreferrer">Invite</a>
+              
+                <a href="https://top.gg/bot/1194219710351429683/vote" class="btn secondary" target="_blank" rel="noopener noreferrer">Vote</a>
+              
+              <a href="https://discord.gg/BusuZp2G8w" class="btn secondary" target="_blank" rel="noopener noreferrer">Support</a>
+              
+                <a href="" class="btn secondary" target="_blank" rel="noopener noreferrer">Supporter Store</a>
+              
+              <a href="https://afterpartylabs.xyz" class="btn secondary" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="first-time-setup">First-Time Setup</h2>
+
+<h3 id="1-invite-lofi-vibes">1. Invite Lofi Vibes</h3>
+
+<p>Use the configured bot invite link from your deployment:</p>
+
+<p><a href="https://discord.com/oauth2/authorize?client_id=1194219710351429683&amp;permissions=36816961&amp;integration_type=0&amp;scope=bot%20applications.commands">Invite Lofi Vibes</a></p>
+
+<h3 id="2-confirm-discord-permissions">2. Confirm Discord Permissions</h3>
+
+<p>Open <strong>Server Settings -&gt; Roles -&gt; Lofi Vibes</strong> and confirm the bot can view channels, send messages, use embeds, connect to voice, and speak.</p>
+
+<h3 id="3-join-a-voice-channel">3. Join A Voice Channel</h3>
+
+<p>Join the voice channel where the station should play.</p>
+
+<h3 id="4-pick-a-station">4. Pick A Station</h3>
+
+<p>Run <code class="language-plaintext highlighter-rouge">/station</code>, choose a preset station from the dropdown, and Lofi Vibes will start or switch playback in your voice channel.</p>
+
+<h3 id="5-keep-playback-running">5. Keep Playback Running</h3>
+
+<p>Run <code class="language-plaintext highlighter-rouge">/24-7 mode:enable</code> if this server should recover radio playback and reconnect where possible.</p>
+
+<h2 id="local-setup">Local Setup</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install
+</span>npm.cmd <span class="nb">ls</span> <span class="nt">--depth</span><span class="o">=</span>0
+node <span class="nt">--check</span> src/index.js
+</code></pre></div></div>
+
+<p>Do not commit <code class="language-plaintext highlighter-rouge">.env</code>. Keep tokens, database URLs, and Lavalink credentials local to the deployment environment.</p>
+
+<h2 id="environment-example">Environment Example</h2>
+
+<p>Use placeholders like these in your local <code class="language-plaintext highlighter-rouge">.env</code> or hosting provider. Replace every value that ends in <code class="language-plaintext highlighter-rouge">_HERE</code>.</p>
+
+<pre><code class="language-env">DISCORD_TOKEN=BOT_TOKEN_HERE
+PREFIX=!
+OWNER_ID=DISCORD_USER_ID_HERE
+BOT_OWNER_IDS=DISCORD_USER_ID_HERE
+BOT_DEVELOPER_IDS=DISCORD_USER_ID_HERE
+CUSTOM_STATUS=lofi vibes &amp; chill
+
+DB_BACKEND=mongo
+MONGODB_URI=MONGODB_CONNECTION_STRING_HERE
+MONGODB_DB=lofibot
+PORT=3000
+DEFAULT_TIMEZONE=America/New_York
+
+THEME_COLOR=#5865f2
+COLOR=#5865f2
+LOG_CHANNEL_ID=LOG_CHANNEL_ID_HERE
+
+BOT_INVITE_LINK=BOT_INVITE_LINK_HERE
+SUPPORT_SERVER_INVITE=SUPPORT_SERVER_INVITE_HERE
+TOPGG_VOTE_INVITE_LINK=TOPGG_VOTE_LINK_HERE
+SUPPORTER_STORE_LINK=SUPPORTER_STORE_LINK_HERE
+
+SUPPORT_GUILD_ID=SUPPORT_SERVER_ID_HERE
+SUPPORTER_GUILD_ID=SUPPORT_SERVER_ID_HERE
+SUPPORTER_ROLE_ID=SUPPORTER_ROLE_ID_HERE
+BOT_OWNER_ROLE_ID=BOT_OWNER_ROLE_ID_HERE
+BOT_DEVELOPER_ROLE_ID=BOT_DEVELOPER_ROLE_ID_HERE
+
+STATION_UPDATE_CHANNEL_ID=PRIVATE_PRESET_UPLOAD_CHANNEL_ID_HERE
+STATION_REVIEW_CHANNEL_ID=PRIVATE_STATION_REVIEW_CHANNEL_ID_HERE
+
+NODE_NAME=Lofi Vibes
+NODE_URL=LAVALINK_HOST_AND_PORT_HERE
+NODE_AUTH=LAVALINK_PASSWORD_HERE
+NODE_SECURE=false
+
+RADIO_BROWSER_API_URL=https://all.api.radio-browser.info
+RADIO_BROWSER_TIMEOUT_MS=10000
+
+SPOTIFY_ID=SPOTIFY_CLIENT_ID_HERE
+SPOTIFY_SECRET=SPOTIFY_CLIENT_SECRET_HERE
+</code></pre>
+
+<h3 id="link-env-compatibility">Link Env Compatibility</h3>
+
+<p>Lofi Vibes preserves older env names where possible:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">TOKEN</code> or <code class="language-plaintext highlighter-rouge">DISCORD_TOKEN</code></li>
+  <li><code class="language-plaintext highlighter-rouge">INVITE</code> or <code class="language-plaintext highlighter-rouge">BOT_INVITE_LINK</code></li>
+  <li><code class="language-plaintext highlighter-rouge">SUPPORT</code> or <code class="language-plaintext highlighter-rouge">SUPPORT_SERVER_INVITE</code></li>
+  <li><code class="language-plaintext highlighter-rouge">VOTE</code> or <code class="language-plaintext highlighter-rouge">TOPGG_VOTE_INVITE_LINK</code></li>
+  <li><code class="language-plaintext highlighter-rouge">SUPPORTER_STORE_LINK</code>, <code class="language-plaintext highlighter-rouge">SUPPORTER_STORE</code>, or <code class="language-plaintext highlighter-rouge">STORE</code></li>
+  <li><code class="language-plaintext highlighter-rouge">SUPPORTER_GUILD_ID</code> or <code class="language-plaintext highlighter-rouge">SUPPORT_GUILD_ID</code></li>
+  <li><code class="language-plaintext highlighter-rouge">SPOTIFYID</code> or <code class="language-plaintext highlighter-rouge">SPOTIFY_ID</code></li>
+  <li><code class="language-plaintext highlighter-rouge">SPOTIFYSECRET</code> or <code class="language-plaintext highlighter-rouge">SPOTIFY_SECRET</code></li>
+  <li><code class="language-plaintext highlighter-rouge">MONGODB_URI</code> or <code class="language-plaintext highlighter-rouge">MONGO_URI</code></li>
+  <li><code class="language-plaintext highlighter-rouge">COLOR</code> or <code class="language-plaintext highlighter-rouge">THEME_COLOR</code></li>
+</ul>
+
+<h2 id="optional-supporter-recognition">Optional Supporter Recognition</h2>
+
+<p>Supporter membership is optional recognition only. Configure <code class="language-plaintext highlighter-rouge">SUPPORTER_GUILD_ID</code>, <code class="language-plaintext highlighter-rouge">SUPPORTER_ROLE_ID</code>, and a supporter store link only if you want supporter-aware badges/status messages to appear.</p>
+
+<h2 id="manual-test-checklist">Manual Test Checklist</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/station</code> opens the station dropdown and switches stations without disconnecting the bot.</li>
+  <li><code class="language-plaintext highlighter-rouge">/24-7 mode:enable</code> saves the setting and recovers playback where possible.</li>
+  <li><code class="language-plaintext highlighter-rouge">/profile</code> renders a readable profile card.</li>
+  <li><code class="language-plaintext highlighter-rouge">/server-profile show</code> displays server defaults for users with Manage Server.</li>
+  <li><code class="language-plaintext highlighter-rouge">/submit-station</code> creates a pending review item in the configured review channel.</li>
+  <li><code class="language-plaintext highlighter-rouge">/stations validate</code> and <code class="language-plaintext highlighter-rouge">/stations reload</code> work in the support server for developers.</li>
+</ul>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-row">
+        <div class="badge powered-by"><span>Powered by</span><strong>Afterparty Bot Labs</strong></div>
+        <div class="muted">© 2026 Afterparty Bot Labs · <a href="https://afterpartylabs.xyz" target="_blank" rel="noopener noreferrer">Website</a></div>
+      </div>
+    </footer>
+  </body>
+</html>

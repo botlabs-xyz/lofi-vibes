@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#5865F2" />
+    <title>Commands | Lofi Vibes</title>
+    <meta name="description" content="Lofi Vibes command reference." />
+    
+    
+    
+      <link rel="icon" href="/lofi-vibes/assets/css/img/favicon.ico" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="/lofi-vibes/assets/css/img/favicon.ico" />
+    
+    <link rel="stylesheet" href="/lofi-vibes/assets/css/style.css" />
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <div class="wrap">
+        <div class="brand">
+          
+            <img src="/lofi-vibes/assets/css/img/favicon.ico" alt="Lofi Vibes logo" />
+          
+          <div class="brand-copy">
+            <h1 class="project-name">Lofi Vibes</h1>
+            <p class="project-tagline">Free-first live radio for Discord study rooms, chill hangouts, and background listening.</p>
+            <nav class="site-nav" aria-label="Primary">
+              <a href="/lofi-vibes/">Home</a>
+              <a href="/lofi-vibes/commands/">Commands</a>
+              <a href="/lofi-vibes/setup/">Setup</a>
+              <a href="/lofi-vibes/station-workflows/">Station Workflows</a>
+              <a href="/lofi-vibes/permissions/">Permissions</a>
+              <a href="/lofi-vibes/troubleshooting/">Troubleshooting</a>
+              <a href="/lofi-vibes/faq/">FAQ</a>
+              <a href="/lofi-vibes/privacy/">Privacy</a>
+              <a href="/lofi-vibes/terms/">Terms</a>
+            </nav>
+            <div class="cta">
+              <a href="https://discord.com/oauth2/authorize?client_id=1194219710351429683&permissions=36816961&integration_type=0&scope=bot%20applications.commands" class="btn primary" target="_blank" rel="noopener noreferrer">Invite</a>
+              
+                <a href="https://top.gg/bot/1194219710351429683/vote" class="btn secondary" target="_blank" rel="noopener noreferrer">Vote</a>
+              
+              <a href="https://discord.gg/BusuZp2G8w" class="btn secondary" target="_blank" rel="noopener noreferrer">Support</a>
+              
+                <a href="" class="btn secondary" target="_blank" rel="noopener noreferrer">Supporter Store</a>
+              
+              <a href="https://afterpartylabs.xyz" class="btn secondary" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="command-reference">Command Reference</h2>
+
+<p>Lofi Vibes is focused on live radio and station playback. Use <code class="language-plaintext highlighter-rouge">/help</code> in your server for the exact command list currently registered there.</p>
+
+<h3 id="radio-and-playback">Radio And Playback</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/station</code></td>
+      <td>Opens the preset station menu and switches to the selected station.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/radio</code></td>
+      <td>Plays a radio stream or station search result where supported.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/play</code></td>
+      <td>Starts playback from a supported query, URL, or saved flow.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/search</code></td>
+      <td>Searches for playable radio content.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/popular</code></td>
+      <td>Shows popular station options where available.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/favorites</code></td>
+      <td>Manages saved favorite stations.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/pause</code></td>
+      <td>Pauses the current playback session.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/resume</code></td>
+      <td>Resumes playback.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/stop</code></td>
+      <td>Stops playback and clears the active session.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/nowplaying</code></td>
+      <td>Shows the current station or stream.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/queue</code></td>
+      <td>Shows the current playback queue/session list where applicable.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/volume</code></td>
+      <td>Sets playback volume for the server.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/sleep</code></td>
+      <td>Sets a sleep timer for playback.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/filters</code></td>
+      <td>Applies supported audio filters.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/hq</code></td>
+      <td>Uses high-quality playback behavior where supported by the source.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="continuous-radio">Continuous Radio</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/24-7 mode:enable</code></td>
+      <td>Keeps Lofi Vibes connected and attempts to recover the current or saved station.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/24-7 mode:disable</code></td>
+      <td>Stops automatic 24/7 recovery for the server.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">/24-7</code> is the main continuous playback feature. Live stations already continue by nature, and 24/7 handles recovery when the bot needs to reconnect.</p>
+
+<h3 id="profiles-and-server-settings">Profiles And Server Settings</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/profile</code></td>
+      <td>Shows a modern user profile card with level, XP, listening stats, favorite station, and trusted badges.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/theme</code></td>
+      <td>Updates user-facing color/theme choices where supported.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/server-profile show</code></td>
+      <td>Shows this server’s Lofi Vibes settings.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/server-profile color</code></td>
+      <td>Sets or clears the server accent color.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/server-profile default-station</code></td>
+      <td>Sets or clears the server default preset station.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/server-profile 24-7</code></td>
+      <td>Sets the server 24/7 default.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/server-profile volume</code></td>
+      <td>Sets the server default volume.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/server-profile dj-role</code></td>
+      <td>Sets or clears the server DJ role.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/server-profile reset</code></td>
+      <td>Resets this server’s Lofi Vibes settings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">/server-profile</code> requires the server owner, Manage Server permission, or bot owner/developer access.</p>
+
+<h3 id="station-requests">Station Requests</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/submit-station</code></td>
+      <td>Sends a station request to the bot team review channel.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/apply</code></td>
+      <td>Legacy redirect that tells users to use <code class="language-plaintext highlighter-rouge">/submit-station</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Station requests are not sent directly to Radio Browser. They are reviewed first by the bot team.</p>
+
+<h3 id="utility-and-support">Utility And Support</h3>
+
+<p>| Command | What it does |
+| — | — |
+| <code class="language-plaintext highlighter-rouge">/help</code> | Shows bot help. |
+| <code class="language-plaintext highlighter-rouge">/about</code> | Shows Lofi Vibes information. |
+| <code class="language-plaintext highlighter-rouge">/info</code> | Shows bot/service information. |
+| <code class="language-plaintext highlighter-rouge">/invite</code> | Shows the configured bot invite link. |
+| <code class="language-plaintext highlighter-rouge">/support</code> | Shows the configured support server link. |
+| <code class="language-plaintext highlighter-rouge">/language</code> | Shows language information. |
+| <code class="language-plaintext highlighter-rouge">/setlanguage</code> | Changes language settings where permitted. |
+| <code class="language-plaintext highlighter-rouge">/badge</code> | Lists, equips, or clears allowed custom profile badges. Reserved team/supporter badges are protected. |</p>
+<h3 id="developer-and-staff">Developer And Staff</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Access</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/bot</code></td>
+      <td>Bot owner/developer</td>
+      <td>Global Bot Appearance Manager.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/stations reload</code></td>
+      <td>Bot owner/developer in support server</td>
+      <td>Reloads preset stations from JSON without restarting.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/stations validate</code></td>
+      <td>Bot owner/developer in support server</td>
+      <td>Validates the preset station JSON.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/stations list</code></td>
+      <td>Bot owner/developer in support server</td>
+      <td>Shows the currently loaded preset stations.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/radiostatus</code></td>
+      <td>Staff/developer</td>
+      <td>Shows radio service status where configured.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/servers</code></td>
+      <td>Staff/developer</td>
+      <td>Shows server information where configured.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/set</code></td>
+      <td>Staff/developer</td>
+      <td>Maintains bot settings where configured.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>See <a href="/lofi-vibes/station-workflows/">Station Workflows</a> for the preset JSON, upload-channel, and review-channel flows.</p>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-row">
+        <div class="badge powered-by"><span>Powered by</span><strong>Afterparty Bot Labs</strong></div>
+        <div class="muted">© 2026 Afterparty Bot Labs · <a href="https://afterpartylabs.xyz" target="_blank" rel="noopener noreferrer">Website</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
