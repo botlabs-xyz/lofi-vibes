@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 title: Setup
 description: First-time setup for Lofi Vibes in Discord.
@@ -9,24 +9,108 @@ permalink: /setup/
 
 ### 1. Invite Lofi Vibes
 
-Use the official invite:
+Use the configured bot invite link from your deployment:
 
-[Invite Lofi Vibes](https://discord.com/oauth2/authorize?client_id=1194219710351429683&permissions=36816961&integration_type=0&scope=bot%20applications.commands)
+[Invite Lofi Vibes]({{ site.cta_invite_url }})
 
-### 2. Confirm Permissions
+### 2. Confirm Discord Permissions
 
-Open **Server Settings → Roles → Lofi Vibes** and confirm required voice + messaging permissions are enabled.
+Open **Server Settings -> Roles -> Lofi Vibes** and confirm the bot can view channels, send messages, use embeds, connect to voice, and speak.
 
-### 3. Join a Voice Channel
+### 3. Join A Voice Channel
 
-Join the channel where you want the stream to play.
+Join the voice channel where the station should play.
 
-### 4. Start Streaming
+### 4. Pick A Station
 
-Run the bot start/play command (for example `/start` or deployment equivalent shown in `/help`).
+Run `/station`, choose a preset station from the dropdown, and Lofi Vibes will start or switch playback in your voice channel.
 
-### 5. Validate Playback
+### 5. Keep Playback Running
 
-- Bot joined correct voice channel
-- Audio is audible to members
-- Stop/disconnect controls work
+Run `/24-7 mode:enable` if this server should recover radio playback and reconnect where possible.
+
+## Local Setup
+
+```bash
+npm install
+npm.cmd ls --depth=0
+node --check src/index.js
+```
+
+Do not commit `.env`. Keep tokens, database URLs, and Lavalink credentials local to the deployment environment.
+
+## Environment Example
+
+Use placeholders like these in your local `.env` or hosting provider. Replace every value that ends in `_HERE`.
+
+```env
+DISCORD_TOKEN=BOT_TOKEN_HERE
+PREFIX=!
+OWNER_ID=DISCORD_USER_ID_HERE
+BOT_OWNER_IDS=DISCORD_USER_ID_HERE
+BOT_DEVELOPER_IDS=DISCORD_USER_ID_HERE
+CUSTOM_STATUS=lofi vibes & chill
+
+DB_BACKEND=mongo
+MONGODB_URI=MONGODB_CONNECTION_STRING_HERE
+MONGODB_DB=lofibot
+PORT=3000
+DEFAULT_TIMEZONE=America/New_York
+
+THEME_COLOR=#5865f2
+COLOR=#5865f2
+LOG_CHANNEL_ID=LOG_CHANNEL_ID_HERE
+
+BOT_INVITE_LINK=BOT_INVITE_LINK_HERE
+SUPPORT_SERVER_INVITE=SUPPORT_SERVER_INVITE_HERE
+TOPGG_VOTE_INVITE_LINK=TOPGG_VOTE_LINK_HERE
+SUPPORTER_STORE_LINK=SUPPORTER_STORE_LINK_HERE
+
+SUPPORT_GUILD_ID=SUPPORT_SERVER_ID_HERE
+SUPPORTER_GUILD_ID=SUPPORT_SERVER_ID_HERE
+SUPPORTER_ROLE_ID=SUPPORTER_ROLE_ID_HERE
+BOT_OWNER_ROLE_ID=BOT_OWNER_ROLE_ID_HERE
+BOT_DEVELOPER_ROLE_ID=BOT_DEVELOPER_ROLE_ID_HERE
+
+STATION_UPDATE_CHANNEL_ID=PRIVATE_PRESET_UPLOAD_CHANNEL_ID_HERE
+STATION_REVIEW_CHANNEL_ID=PRIVATE_STATION_REVIEW_CHANNEL_ID_HERE
+
+NODE_NAME=Lofi Vibes
+NODE_URL=LAVALINK_HOST_AND_PORT_HERE
+NODE_AUTH=LAVALINK_PASSWORD_HERE
+NODE_SECURE=false
+
+RADIO_BROWSER_API_URL=https://all.api.radio-browser.info
+RADIO_BROWSER_TIMEOUT_MS=10000
+
+SPOTIFY_ID=SPOTIFY_CLIENT_ID_HERE
+SPOTIFY_SECRET=SPOTIFY_CLIENT_SECRET_HERE
+```
+
+### Link Env Compatibility
+
+Lofi Vibes preserves older env names where possible:
+
+- `TOKEN` or `DISCORD_TOKEN`
+- `INVITE` or `BOT_INVITE_LINK`
+- `SUPPORT` or `SUPPORT_SERVER_INVITE`
+- `VOTE` or `TOPGG_VOTE_INVITE_LINK`
+- `SUPPORTER_STORE_LINK`, `SUPPORTER_STORE`, or `STORE`
+- `SUPPORTER_GUILD_ID` or `SUPPORT_GUILD_ID`
+- `SPOTIFYID` or `SPOTIFY_ID`
+- `SPOTIFYSECRET` or `SPOTIFY_SECRET`
+- `MONGODB_URI` or `MONGO_URI`
+- `COLOR` or `THEME_COLOR`
+
+## Optional Supporter Recognition
+
+Supporter membership is optional recognition only. Configure `SUPPORTER_GUILD_ID`, `SUPPORTER_ROLE_ID`, and a supporter store link only if you want supporter-aware badges/status messages to appear.
+
+## Manual Test Checklist
+
+- `/station` opens the station dropdown and switches stations without disconnecting the bot.
+- `/24-7 mode:enable` saves the setting and recovers playback where possible.
+- `/profile` renders a readable profile card.
+- `/server-profile show` displays server defaults for users with Manage Server.
+- `/submit-station` creates a pending review item in the configured review channel.
+- `/stations validate` and `/stations reload` work in the support server for developers.

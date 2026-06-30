@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 title: Troubleshooting
 description: Common Lofi Vibes issues and fixes.
@@ -7,35 +7,44 @@ permalink: /troubleshooting/
 
 ## Troubleshooting
 
-### Bot joins voice but no audio plays
+### `/station` opens but no music starts
 
-- Confirm bot has **Speak** permission in that voice channel.
-- Check server-level mute/deafen rules for the bot role.
-- Stop and restart playback once.
+- Join a voice channel before selecting a station.
+- Confirm Lofi Vibes can View, Connect, and Speak in that voice channel.
+- Try a different preset station in case the upstream stream is offline.
+- If the bot is already connected, selecting a new station should switch playback without disconnecting.
+
+### 24/7 does not recover playback
+
+- Run `/24-7 mode:enable` in the server.
+- Start or select a station after enabling 24/7 if no active session exists yet.
+- Confirm the saved voice channel still exists and the bot can access it.
+- Check logs for reconnect or resume failure reasons.
 
 ### Slash commands are missing
 
-- Confirm bot is installed in server integrations.
-- Wait a few minutes after invite/update (Discord can delay command sync).
-- Re-invite with the official invite link if needed.
+- Confirm the bot is installed in server integrations.
+- Wait a few minutes after command registration changes.
+- Re-invite with the configured bot invite link if the app command scope is missing.
 
-### Bot does not join channel
+### `/submit-station` says submissions are not configured
 
-- Confirm bot can **View** and **Connect** in that channel.
-- Check channel user limits and any role-restricted access.
+Set `STATION_REVIEW_CHANNEL_ID` to a private review channel in the configured support server.
 
-### Stream stops unexpectedly
+### Station upload is ignored
 
-- Confirm voice channel is still active and bot still connected.
-- Retry playback command.
-- Check Discord status if widespread voice issues are occurring.
+- Upload the file in `STATION_UPDATE_CHANNEL_ID`.
+- Use the exact attachment name `preset-stations.json`.
+- Confirm the uploader is a configured bot owner/developer or has a configured owner/developer role.
+- Confirm the upload channel is inside `SUPPORTER_GUILD_ID` or `SUPPORT_GUILD_ID`.
 
-## What to send support
+## What To Send Support
 
-- server name
-- command used
-- expected result
-- actual result
-- screenshot of channel/role permissions if relevant
+- Server name and ID, if safe to share
+- Command used
+- Expected result
+- Actual result
+- Screenshot of channel/role permissions if relevant
+- Any bot log line related to playback, station validation, or review-channel delivery
 
-Support: [Support Server](https://discord.gg/BusuZp2G8w)
+Support: [Support Server]({{ site.cta_support_url }})

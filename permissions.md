@@ -1,43 +1,41 @@
-﻿---
+---
 layout: default
 title: Permissions
 description: Required permissions for Lofi Vibes and what each one does.
 permalink: /permissions/
 ---
 
-## Permissions Guide
+## Discord Permissions
 
-### View Channels
+### Bot Role
 
-Lets Lofi Vibes see target text/voice channels.
+Lofi Vibes needs these normal Discord permissions:
 
-### Connect
+- View Channels
+- Send Messages
+- Embed Links
+- Read Message History
+- Use Slash Commands
+- Connect
+- Speak
 
-Allows joining voice channels where stream playback happens.
+### Voice Channels
 
-### Speak
+If playback fails in one channel but works in another, check channel overrides for:
 
-Allows audio output in voice channels.
+- View Channel
+- Connect
+- Speak
+- Use Voice Activity
 
-### Send Messages
+### Server Settings
 
-Needed for command feedback and status messages.
+`/server-profile` is limited to the server owner, members with Manage Server, or configured bot owners/developers. It controls server-level Lofi Vibes defaults only and does not change the global bot appearance.
 
-### Embed Links
+### Developer Workflows
 
-Used for richer status/help responses.
+`/stations reload`, `/stations validate`, `/stations list`, station upload handling, and station review approvals require bot owner/developer access in the configured support server.
 
-### Read Message History
+## Supporter Role
 
-Used for context in command responses.
-
-### Use Slash Commands
-
-Required for `/` command availability.
-
-## Permission Checklist
-
-If playback fails, check both:
-
-1. **Server Settings → Roles → Lofi Vibes**
-2. **Channel Edit → Permissions** overrides in the target channels
+The supporter role is used only for recognition. It does not grant extra bot features.

@@ -28,6 +28,7 @@
               <a href="{{ '/' | relative_url }}">Home</a>
               <a href="{{ '/commands/' | relative_url }}">Commands</a>
               <a href="{{ '/setup/' | relative_url }}">Setup</a>
+              <a href="{{ '/station-workflows/' | relative_url }}">Station Workflows</a>
               <a href="{{ '/permissions/' | relative_url }}">Permissions</a>
               <a href="{{ '/troubleshooting/' | relative_url }}">Troubleshooting</a>
               <a href="{{ '/faq/' | relative_url }}">FAQ</a>
@@ -40,6 +41,9 @@
                 <a href="{{ site.topgg_url }}" class="btn secondary" target="_blank" rel="noopener noreferrer">Vote</a>
               {% endif %}
               <a href="{{ site.cta_support_url }}" class="btn secondary" target="_blank" rel="noopener noreferrer">Support</a>
+              {% if site.cta_store_url %}
+                <a href="{{ site.cta_store_url }}" class="btn secondary" target="_blank" rel="noopener noreferrer">Supporter Store</a>
+              {% endif %}
               <a href="{{ site.cta_website_url }}" class="btn secondary" target="_blank" rel="noopener noreferrer">Website</a>
             </div>
           </div>
