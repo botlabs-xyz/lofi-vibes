@@ -46,9 +46,6 @@ Use placeholders like these in your local `.env` or hosting provider. Replace ev
 ```env
 DISCORD_TOKEN=BOT_TOKEN_HERE
 PREFIX=!
-OWNER_ID=DISCORD_USER_ID_HERE
-BOT_OWNER_IDS=DISCORD_USER_ID_HERE
-BOT_DEVELOPER_IDS=DISCORD_USER_ID_HERE
 CUSTOM_STATUS=lofi vibes & chill
 
 DB_BACKEND=mongo
@@ -65,15 +62,6 @@ BOT_INVITE_LINK=BOT_INVITE_LINK_HERE
 SUPPORT_SERVER_INVITE=SUPPORT_SERVER_INVITE_HERE
 TOPGG_VOTE_INVITE_LINK=TOPGG_VOTE_LINK_HERE
 SUPPORTER_STORE_LINK=SUPPORTER_STORE_LINK_HERE
-
-SUPPORT_GUILD_ID=SUPPORT_SERVER_ID_HERE
-SUPPORTER_GUILD_ID=SUPPORT_SERVER_ID_HERE
-SUPPORTER_ROLE_ID=SUPPORTER_ROLE_ID_HERE
-BOT_OWNER_ROLE_ID=BOT_OWNER_ROLE_ID_HERE
-BOT_DEVELOPER_ROLE_ID=BOT_DEVELOPER_ROLE_ID_HERE
-
-STATION_UPDATE_CHANNEL_ID=PRIVATE_PRESET_UPLOAD_CHANNEL_ID_HERE
-STATION_REVIEW_CHANNEL_ID=PRIVATE_STATION_REVIEW_CHANNEL_ID_HERE
 
 NODE_NAME=Lofi Vibes
 NODE_URL=LAVALINK_HOST_AND_PORT_HERE
@@ -96,7 +84,6 @@ Lofi Vibes preserves older env names where possible:
 - `SUPPORT` or `SUPPORT_SERVER_INVITE`
 - `VOTE` or `TOPGG_VOTE_INVITE_LINK`
 - `SUPPORTER_STORE_LINK`, `SUPPORTER_STORE`, or `STORE`
-- `SUPPORTER_GUILD_ID` or `SUPPORT_GUILD_ID`
 - `SPOTIFYID` or `SPOTIFY_ID`
 - `SPOTIFYSECRET` or `SPOTIFY_SECRET`
 - `MONGODB_URI` or `MONGO_URI`
@@ -104,7 +91,7 @@ Lofi Vibes preserves older env names where possible:
 
 ## Optional Supporter Recognition
 
-Supporter membership is optional recognition only. Configure `SUPPORTER_GUILD_ID`, `SUPPORTER_ROLE_ID`, and a supporter store link only if you want supporter-aware badges/status messages to appear.
+Supporter membership is optional recognition only. Configure supporter recognition privately in your deployment environment if you want supporter-aware badges/status messages to appear.
 
 ## Manual Test Checklist
 
@@ -112,5 +99,4 @@ Supporter membership is optional recognition only. Configure `SUPPORTER_GUILD_ID
 - `/24-7 mode:enable` saves the setting and recovers playback where possible.
 - `/profile` renders a readable profile card.
 - `/server-profile show` displays server defaults for users with Manage Server.
-- `/submit-station` creates a pending review item in the configured review channel.
-- `/stations validate` and `/stations reload` work in the support server for developers.
+- `/submit-station` confirms the station request was sent for team review.

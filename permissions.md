@@ -32,10 +32,6 @@ If playback fails in one channel but works in another, check channel overrides f
 
 `/server-profile` is limited to the server owner, members with Manage Server, or configured bot owners/developers. It controls server-level Lofi Vibes defaults only and does not change the global bot appearance.
 
-### Developer Workflows
-
-`/stations reload`, `/stations validate`, `/stations list`, station upload handling, and station review approvals require bot owner/developer access in the configured support server.
-
 ## Supporter Role
 
 The supporter role is used only for recognition. It does not grant extra bot features.

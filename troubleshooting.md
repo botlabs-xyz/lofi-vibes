@@ -29,14 +29,11 @@ permalink: /troubleshooting/
 
 ### `/submit-station` says submissions are not configured
 
-Set `STATION_REVIEW_CHANNEL_ID` to a private review channel in the configured support server.
+The bot team needs to finish station submission review setup. Ask in the support server.
 
 ### Station upload is ignored
 
-- Upload the file in `STATION_UPDATE_CHANNEL_ID`.
-- Use the exact attachment name `preset-stations.json`.
-- Confirm the uploader is a configured bot owner/developer or has a configured owner/developer role.
-- Confirm the upload channel is inside `SUPPORTER_GUILD_ID` or `SUPPORT_GUILD_ID`.
+Station presets are maintained by the Lofi Vibes team through private developer tools. If a station looks wrong or outdated, submit a station request or report it in the support server.
 
 ## What To Send Support
 

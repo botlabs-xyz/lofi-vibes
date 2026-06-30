@@ -63,6 +63,8 @@ Lofi Vibes is focused on live radio and station playback. Use `/help` in your se
 
 Station requests are not sent directly to Radio Browser. They are reviewed first by the bot team.
 
+Station presets are maintained by the Lofi Vibes team through private developer tools.
+
 ### Utility And Support
 
 | Command | What it does |
@@ -75,16 +77,3 @@ Station requests are not sent directly to Radio Browser. They are reviewed first
 | `/language` | Shows language information. |
 | `/setlanguage` | Changes language settings where permitted. |
 | `/badge` | Lists, equips, or clears allowed custom profile badges. Reserved team/supporter badges are protected. |
-### Developer And Staff
-
-| Command | Access | What it does |
-| --- | --- | --- |
-| `/bot` | Bot owner/developer | Global Bot Appearance Manager. |
-| `/stations reload` | Bot owner/developer in support server | Reloads preset stations from JSON without restarting. |
-| `/stations validate` | Bot owner/developer in support server | Validates the preset station JSON. |
-| `/stations list` | Bot owner/developer in support server | Shows the currently loaded preset stations. |
-| `/radiostatus` | Staff/developer | Shows radio service status where configured. |
-| `/servers` | Staff/developer | Shows server information where configured. |
-| `/set` | Staff/developer | Maintains bot settings where configured. |
-
-See [Station Workflows]({{ '/station-workflows/' | relative_url }}) for the preset JSON, upload-channel, and review-channel flows.
